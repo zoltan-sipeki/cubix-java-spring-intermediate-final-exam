@@ -1,0 +1,31 @@
+---
+server:
+  port: 8085
+
+spring:
+  h2:
+    console:
+      enabled: true
+  datasource:
+    url: jdbc:h2:mem:user-db
+  jpa:
+    open-in-view: false
+    show-sql: true
+    properties:
+      hibernate:
+        highlight_sql: true
+    hibernate:
+      ddl-auto: create
+
+eureka:
+  instance:
+    hostname: localhost  
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8082/eureka/
+
+jwt:
+  algorithm: RSA512
+  privateKey: MIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQC+6U62s9g2VQjW+h5dRn5m9+Xggyb/hOdhKZrO+8r0ifTyzsTXLffZuC1U7p7VHtGMzHFwGlra9nprjcjs+Fj9Lm75bNC4G9Z1YStJi5LWVhohneIrLRsM/N9tj8N9dN9i2zQP8MF+tjWGHrc9lkg06vSvXlasC69SmUV2TQ24qFEGaoAEi3TJCeQ69jGAd2oMec3RO49V1p1YPtthSnBqJwmctyba9TRmSeKKxBSbbnAkzce/g7FYufiO6LTixUKowH+xUoytjalpHoYiFhVvcwMYCuM9YaAMIGgyRC0I1JPFfS0oGECVi5mHeJUzBEzrkbGe0HAJP9N4nwrUicFlAgMBAAECggEAGygf+NBTaMMm20HAEP+mmmoYCpxNb1qN+V3MNjZOFAQN0n5ENOHGmHNhC2xYLrPQFim81zgAhZY7KtKD6uWW7wjsY1GtzQq0soTMfg07KX8c/3wwgHjNmMbd1310TwPRhQPuf3f9ZlNwALCc20dl5RUpEksmpBmTanoADgh+863K0wF9eaRcPiZCe5rUJ38KcMIGkjQNFo62A7NSJ8AQ4OSGkDlEdeskNfjR9jGd3U0IZVcX9XUMMQDix+GnCN5YNrohnDUDBtis22Ag7haen0XFH9w0YNqYoR01Ye1MpJoLOsAdIGTLXBx7AOlHq5iso06+WPwN2vEa+FnbokZ9DwKBgQDibVZy9I5BNVebt3NSPm615W1GOpiIMltm/AyajtFjNp5L2mY/2EgOjrX2iFegYmlqqdS4rk/r/B8jIfVgfvP1iBgkjQN/zSkvMlkz896KjWZpbt5ZH2nKTprxsewpEiqwrHsbE8wkZZiR0gpKKi56BJwVePA2bIdaye5pGDSmkwKBgQDX2H1Vu58R+pOwTd9WiYWb+qj5+3thd30CT7FNjFGu+NAHnuyVlcr65A7IIcuIwG4NXXCA6rPXpiRK+fYzmgAXdEPlffM3VZMLc2rmLDJ/a9XANjOosVJRSvX36y/56mzDyOIADSHedXTDioejCO+FN5KjZCiri7I6AU83XS27JwKBgDHkl90CyGnUADb+yHmB6lFIebi05rF0LzHVLk3MVJVBDsZ2HHvLA625gp0NVAmyRbpMK+R5/IBqcM4ECJa3wrgCwhcjv3ak1YNh28gX35y2Ja/rzzDiPCRpB7lkVD6Ek0WU7Bd+WEhY3rKbDsti2hTm+SG+IWhMp9K4lkEwJUHjAoGAd+SdwehktETekli/DL94wqpZ//lLkFkhzA3eK3gcyzcTvpftTC2XQQM6nrn+52gT+UKEwmccHFYB5M+xjPomwOBo8mmiloLnGb4zi8TTC+onIgw5Z6OPWO5tcBdoX8ZyQdIsjuC8hmfxwsgJDWtiODolLrLs0FTZW9TsXpFYXJMCgYAuqq2yDlhl5YedBupln3Qtu9n1ibaFLclCrOz/Y94KfKiPCD53+D+qvu4yy6qaSXJNTu1M6M+Zdn1WKDlJaBGS1iRyBWe03PJtObid0/VashZtG84h0Y30+NQZ5Bqp9Al6uyEk6XvwHsqwMmbs65tl/B+iQ6rQ33nhr2Fwzi8FHA==
+  issuer: WebshopApplication
+  expiration: 10m
